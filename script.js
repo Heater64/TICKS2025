@@ -35,11 +35,10 @@ function loadPlaces() {
 }
 
 function addTick() {
-    const activity = document.getElementById("activityInput").value.trim();
     const place = document.getElementById("placeSelect").value;
     const withWhat = document.getElementById("withInput").value.trim();
-    if (activity) {
-        const entry = { activity, place, withWhat, date: new Date().toLocaleString() };
+    if (place && withWhat) {
+        const entry = { place, withWhat, date: new Date().toLocaleString() };
         let history = JSON.parse(localStorage.getItem("history")) || [];
         history.push(entry);
         localStorage.setItem("history", JSON.stringify(history));
@@ -54,7 +53,7 @@ function loadHistory() {
     let history = JSON.parse(localStorage.getItem("history")) || [];
     history.forEach(entry => {
         let li = document.createElement("li");
-        li.innerHTML = `<strong>${entry.activity}</strong> en ${entry.place} con ${entry.withWhat} <br> <small>${entry.date}</small>`;
+        li.innerHTML = `<strong>${entry.place}</strong> con ${entry.withWhat} <br> <small>${entry.date}</small>`;
         historyList.appendChild(li);
     });
 }
