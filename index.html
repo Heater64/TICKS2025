@@ -14,15 +14,18 @@
             <input type="text" id="activityInput" placeholder="Añadir actividad...">
             <button onclick="addActivity()">✔ Añadir</button>
         </div>
-        <div class="form">
-            <select id="placeSelect"></select>
-            <input type="text" id="newPlace" placeholder="Nuevo lugar...">
-            <button onclick="addPlace()">➕</button>
+        <button class="main-btn" onclick="showTickModal()">✅ Tick</button>
+        <div id="tickModal" class="modal">
+            <div class="modal-content">
+                <h2>Registrar Actividad</h2>
+                <select id="placeSelect"></select>
+                <input type="text" id="newPlace" placeholder="Nuevo lugar...">
+                <button onclick="addPlace()">➕</button>
+                <input type="text" id="withInput" placeholder="¿Con qué?">
+                <button onclick="addTick()">✅ Registrar</button>
+                <button onclick="closeTickModal()">❌ Cerrar</button>
+            </div>
         </div>
-        <div class="form">
-            <input type="text" id="withInput" placeholder="¿Con qué?">
-        </div>
-        <button class="main-btn" onclick="addTick()">✅ Registrar</button>
         <ul id="history"></ul>
     </div>
     <script src="script.js"></script>
