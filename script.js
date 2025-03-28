@@ -49,11 +49,13 @@ function addTick() {
 
 function loadHistory() {
     const historyList = document.getElementById("history");
-    historyList.innerHTML = "";
+    historyList.innerHTML = "";  // Limpiar la lista antes de recargarla
     let history = JSON.parse(localStorage.getItem("history")) || [];
     history.forEach(entry => {
         let li = document.createElement("li");
         li.innerHTML = `<strong>${entry.place}</strong> con ${entry.withWhat} <br> <small>${entry.date}</small>`;
+        li.style.opacity = 1;  // Asegurarse de que la opacidad sea 1 cuando se añade el nuevo elemento
+        li.style.transform = 'translateY(0)';  // Evitar el desplazamiento
         historyList.appendChild(li);
     });
 }
