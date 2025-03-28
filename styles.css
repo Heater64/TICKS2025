@@ -21,44 +21,10 @@ h1 {
     margin-bottom: 15px;
 }
 
-.form {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-input, select, button {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-}
-
-input, select {
-    flex: 1;
-}
-
-button {
-    background: #ffcc00;
-    color: black;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #ffaa00;
-}
-
-.main-btn {
-    display: block;
-    width: 100%;
-    font-size: 18px;
-    margin-top: 15px;
-}
-
 ul {
     list-style: none;
     padding: 0;
+    margin-top: 20px;
 }
 
 li {
@@ -96,4 +62,33 @@ li {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+.modal input,
+.modal select,
+.modal button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #ffcc00;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffaa00;
+}
+
+.main-btn {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 15px;
 }
