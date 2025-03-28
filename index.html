@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuento de Actividades</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Mi Recuento 2025</h1>
+        <div class="form">
+            <input type="text" id="activityInput" placeholder="Añadir actividad...">
+            <button onclick="addActivity()">✔ Añadir</button>
+        </div>
+        <div class="form">
+            <select id="placeSelect"></select>
+            <input type="text" id="newPlace" placeholder="Nuevo lugar...">
+            <button onclick="addPlace()">➕</button>
+        </div>
+        <div class="form">
+            <input type="text" id="withInput" placeholder="¿Con qué?">
+        </div>
+        <button class="main-btn" onclick="addTick()">✅ Registrar</button>
+        <ul id="history"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
