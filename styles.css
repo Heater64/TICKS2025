@@ -1,33 +1,107 @@
-body {
+/* Estilos globales */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previene el desbordamiento horizontal */
+    width: 100%; /* Asegura que los elementos ocupen el ancho del viewport */
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #6e8efb, #a777e3);
     color: white;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
 }
 
-.container {
-    max-width: 400px;
-    margin: auto;
+/* Estructura general de los cuadros */
+body {
+    display: flex; /* Coloca los cuadros lado a lado */
+    justify-content: space-between; /* Espacia los cuadros horizontalmente */
+    align-items: flex-start; /* Alinea los cuadros en la parte superior */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Cuadro izquierdo: Añadir Actividad */
+.left-box {
+    flex: 1;
+    margin-right: 20px; /* Separación entre los cuadros */
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
-h1 {
-    font-size: 24px;
+.left-box h2 {
+    font-size: 20px;
     margin-bottom: 15px;
+    color: #ffcc00;
 }
 
-ul {
+/* Botón principal */
+.main-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background: #ffcc00;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.main-btn:hover {
+    background: #ffaa00;
+}
+
+/* Cuadro derecho: Resumen */
+.right-box {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.right-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ffaa00;
+    display: inline-block;
+}
+
+.right-box ul {
+    margin: 10px 0;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.right-box p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #ffcc00;
+}
+
+/* Contenedor del historial */
+ul#history {
     list-style: none;
-    padding: 0;
+    padding: 10px;
     margin-top: 20px;
+    max-height: 300px; /* Altura máxima del historial */
+    overflow-y: scroll; /* Habilita desplazamiento vertical */
+    overflow-x: hidden; /* Desactiva desplazamiento horizontal */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word; /* Rompe palabras largas para ajustarse */
+    white-space: normal; /* Evita que el texto largo desborde */
 }
 
-li {
+/* Elementos dentro del historial */
+ul#history li {
     background: rgba(255, 255, 255, 0.2);
     padding: 10px;
     margin: 5px 0;
@@ -37,6 +111,7 @@ li {
     animation: fadeIn 0.5s forwards;
 }
 
+/* Animación de entrada */
 @keyframes fadeIn {
     to {
         opacity: 1;
@@ -44,6 +119,7 @@ li {
     }
 }
 
+/* Estilos del modal */
 .modal {
     display: none;
     position: fixed;
@@ -62,23 +138,22 @@ li {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    max-width: 400px;
-    width: 100%;
+    overflow-x: hidden; /* Previene el desbordamiento horizontal dentro del modal */
 }
-.modal input,
-.modal select,
-.modal button {
-    margin-top: 10px;
-    width: 100%;
+
+/* Botones dentro del modal */
+input, select, button {
     padding: 10px;
+    border-radius: 5px;
+    border: none;
     margin-bottom: 10px;
 }
 
 button {
     background: #ffcc00;
     color: black;
-    cursor: pointer;
     font-weight: bold;
+    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -86,9 +161,50 @@ button:hover {
     background: #ffaa00;
 }
 
-.main-btn {
-    display: block;
-    width: 100%;
-    font-size: 18px;
-    margin-top: 15px;
+/* Responsiveness para pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Apila los cuadros verticalmente */
+        align-items: center;
+    }
+
+    .left-box, .right-box {
+        margin-right: 0; /* Elimina el espacio lateral */
+        width: 90%; /* Ajusta el ancho al viewport */
+        margin-bottom: 20px; /* Espacio entre los cuadros */
+    }
+}
+/* Caja del resumen */
+#summary {
+    background: rgba(255, 255, 255, 0.2); /* Fondo translúcido */
+    padding: 40px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destacar la caja */
+    color: white; /* Color del texto */
+    text-align: left; /* Alineación del texto a la izquierda */
+    margin: 0; /* Elimina márgenes por defecto */
+}
+
+/* Título dentro del resumen */
+#summary h3 {
+    font-size: 44px; /* Tamaño del título */
+    margin-bottom: 15px; /* Espaciado inferior */
+    color: #ffffff; /* Color amarillo destacado */
+    text-transform: uppercase; /* Mayúsculas para el título */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.52); /* Línea inferior */
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Listas dentro del resumen */
+#summary ul {
+    margin: 20px 0;
+    padding-left: 40px; /* Espaciado para listas */
+    list-style: disc; /* Estilo de lista con viñetas */
+}
+
+#summary p {
+    font-size: 20px; /* Tamaño del texto */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    color: #ffcc00; /* Color amarillo para el texto */
 }
