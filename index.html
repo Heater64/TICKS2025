@@ -10,7 +10,10 @@
 <body>
     <div class="container">
         <h1>📊 Mi Recuento 2025</h1>
+        <div class="form">
+        </div>
         <button class="main-btn" onclick="showTickModal()">✅ Tick</button>
+        <ul id="history"></ul> <!-- Historial ubicado después del formulario -->
         <div id="tickModal" class="modal">
             <div class="modal-content">
                 <h2>Registrar Actividad</h2>
@@ -20,10 +23,12 @@
                 <input type="text" id="withInput" placeholder="¿Con qué?">
                 <button onclick="addTick()">✅ Registrar</button>
                 <button onclick="closeTickModal()">❌ Cerrar</button>
-            </div>
+            </div>                        
         </div>
-        <ul id="history"></ul>
     </div>
+
+    </div>
+    <div id="summary"></div>
     <script src="script.js"></script>
 </body>
 </html>
